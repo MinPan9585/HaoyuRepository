@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TrainASpawnPoint : MonoBehaviour
 {
-    float trainATimer = 5.0f;
+    public float trainATimer = 1f;
+    public float timeBetweenTrains = 2f;
     public GameObject trainAPrefab;
 
-    
     void Update()
     {
         trainATimer -= Time.deltaTime;
@@ -15,7 +15,7 @@ public class TrainASpawnPoint : MonoBehaviour
         if(trainATimer <= 0)
         {
             Instantiate(trainAPrefab, transform);
-            trainATimer = 5f;
+            trainATimer = timeBetweenTrains;
         }
     }
 }
